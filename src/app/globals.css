@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void-base: #040810;
+  --color-void-surface: #08111e;
+  --color-void-crimson: #FF2A4D;
+
+  --color-cosmic-cyan: #62E8FF;
+  --color-cosmic-magenta: #E056FD;
+  --color-cosmic-purple: #8C43FF;
+  --color-cosmic-blue: #2272FF;
+  --color-cosmic-gold: #FFD166;
+
+  --font-display: var(--font-display), serif;
+  --font-body: var(--font-body), sans-serif;
+}
+
+body {
+  background-color: #040810;
+  color: #D8E6F5;
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Efeito de Título Cristalino Místico (Alice Style) */
+.text-fantasy-crystal {
+  font-family: var(--font-display);
+  background: linear-gradient(180deg, #FFFFFF 0%, #B8E4FF 45%, #52A5D9 80%, #204B72 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(98, 232, 255, 0.65)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.9));
+  letter-spacing: 0.08em;
+}
+
+.glass-panel {
+  position: relative;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(98, 232, 255, 0.15);
+  background-color: rgba(6, 14, 26, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(98, 232, 255, 0.05);
+}
+
+.glow-border {
+  position: relative;
+  border-radius: 1.25rem;
+  isolation: isolate;
+}
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(98, 232, 255, 0.6), rgba(140, 67, 255, 0.2), rgba(98, 232, 255, 0.6));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.video-mask {
+  -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 85%);
+  mask-image: radial-gradient(ellipse at center, black 50%, transparent 85%);
+}
+
+.bg-void-gradient {
+  background: radial-gradient(circle at 50% 30%, #0c1b30 0%, #040810 75%);
+}
